@@ -11,11 +11,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/, // finds files based on this regex
-        use: ["style-loader", "css-loader"], // apply loader to the corresponding files. css loader first, then style
+        test: /\.scss$/, // finds files based on this regex
+        use: ["style-loader", "css-loader", "sass-loader"], // apply loader to the corresponding files.
         // order matters, loads in reverse order
-        // css loader bundles css
-        // style loader takes the css and injects it to the dom
+        // sass loader converts scss to css
+        // css loader turns css into commonJS
+        // style loader injects styles into the dom
       },
     ],
   },
