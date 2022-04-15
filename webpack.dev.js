@@ -8,5 +8,6 @@ module.exports = merge(common, {
   output: {
     filename: "main.js", //content hashing to cache bust
     path: path.resolve(__dirname, "dist"), // __dirname in a node script returns the path of the folder where the current JavaScript file resides.
+    assetModuleFilename: "images/[name][ext]", // path of assets
   },
 });
