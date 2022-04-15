@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   devtool: false, // remove eval plus other words so that its easier to read the built code
-  entry: "./src/index.js", // explicit entrypoint for webpack
+  entry: {
+    main: "./src/index.js", // explicit entrypoint for webpack
+    vendor: "./src/vendor.js"
+  },
   plugins: [
     // plugins customize the webpack build process in a variety of ways
     new HtmlWebpackPlugin({
@@ -26,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        type: "asset/resource"
+        type: "asset/resource",
       },
     ],
   },
